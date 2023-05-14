@@ -27,8 +27,7 @@ namespace AssignmentDay3
 
             LineLength1 = (float)Math.Sqrt(Math.Pow(AX2 - AX1, 2) + Math.Pow(AY2 - AY1, 2));
             Console.WriteLine("length of line{0}:", LineLength1);
-            Console.ReadLine();
-
+           
 
             Console.WriteLine("please enter cordinates of line 2nd");
             Console.WriteLine("please enter x1 number");
@@ -46,11 +45,11 @@ namespace AssignmentDay3
             if (LineLength1.Equals(LineLength2))
 
             {
-                Console.WriteLine("line 1st is equals to line 2nd");
+                Console.WriteLine("line 1st is Equals to line 2nd");
             }
             else
             {
-                Console.WriteLine("line 1st is not equals to line 2nd");
+                Console.WriteLine("line 1st is Not Equals to line 2nd");
             }
                  
                 
