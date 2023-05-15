@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace AssignmentDay3
             float LineLength1;
             float LineLength2;
             Console.WriteLine("please enter x1 number");
+            //AX1 = float.Parse(Console.ReadLine());
             float.TryParse(Console.ReadLine(), out AX1);
             Console.WriteLine("please enter x2 number");
             float.TryParse(Console.ReadLine(), out AX2);
@@ -47,11 +49,14 @@ namespace AssignmentDay3
             {
                 Console.WriteLine("line 1st is Equals to line 2nd");
             }
-            else
+            else if (LineLength1 < LineLength2)
             {
-                Console.WriteLine("line 1st is Not Equals to line 2nd");
+                Console.WriteLine("line 1st is Less than line 2nd");
             }
-                 
+            else 
+            {
+                Console.WriteLine("line 1st is Greater than line 2nd");
+            }    
                 
             Console.ReadLine();
 
