@@ -4,63 +4,54 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AssignmentDay3.Program;
 
 namespace AssignmentDay3
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public class Line
         {
-            Console.WriteLine("Welcome to Line Comparison Computation Program!");
-            Console.WriteLine("please enter cordinates of line 1st");
-            float AX1, AX2, AY1, AY2;
-            float BX1, BX2, BY1, BY2;
-            float LineLength1;
-            float LineLength2;
-            Console.WriteLine("please enter x1 number");
-            //AX1 = float.Parse(Console.ReadLine());
-            float.TryParse(Console.ReadLine(), out AX1);
-            Console.WriteLine("please enter x2 number");
-            float.TryParse(Console.ReadLine(), out AX2);
-            Console.WriteLine("please enter y1 number");
-            float.TryParse(Console.ReadLine(), out AY1);
-            Console.WriteLine("please enter y2 number");
-            float.TryParse(Console.ReadLine(), out AY2);
+            public double X1 { get; set; }
+            public double Y1 { get; set; }
+            public double X2 { get; set; }
+            public double Y2 { get; set; }
 
-            LineLength1 = (float)Math.Sqrt(Math.Pow(AX2 - AX1, 2) + Math.Pow(AY2 - AY1, 2));
-            Console.WriteLine("length of line{0}:", LineLength1);
-           
+            //public Line(double x1, double y1, double x2, double y2)
+            //{
+            //    X1 = x1;
+            //    Y1 = y1;
+            //    X2 = x2;
+            //    Y2 = y2;
+            //}
 
-            Console.WriteLine("please enter cordinates of line 2nd");
-            Console.WriteLine("please enter x1 number");
-            float.TryParse(Console.ReadLine(), out BX1);
-            Console.WriteLine("please enter x2 number");
-            float.TryParse(Console.ReadLine(), out BX2);
-            Console.WriteLine("please enter y1 number");
-            float.TryParse(Console.ReadLine(), out BY1);
-            Console.WriteLine("please enter y2 number");
-            float.TryParse(Console.ReadLine(), out BY2);
-
-            LineLength2 = (float)Math.Sqrt(Math.Pow(BX2 - BX1, 2) + Math.Pow(BY2 - BY1, 2));
-            Console.WriteLine("length of line1{0}:", LineLength2);
-
-            if (LineLength1.Equals(LineLength2))
-
+            public double Length()
             {
-                Console.WriteLine("line 1st is Equals to line 2nd");
+                return Math.Sqrt(Math.Pow((X2 - X1), 2) + Math.Pow((Y2 - Y1), 2));
             }
-            else if (LineLength1 < LineLength2)
-            {
-                Console.WriteLine("line 1st is Less than line 2nd");
-            }
-            else 
-            {
-                Console.WriteLine("line 1st is Greater than line 2nd");
-            }    
-                
-            Console.ReadLine();
-
-
         }
+
+        class Programs
+        {
+            static void Main(string[] args)
+            {
+                Line line1 = new Line(0, 7, 3, 4);
+                Line line2 = new Line(3, 4, 7, 1);
+
+                Console.WriteLine("Length of line 1: " + line1.Length());
+                Console.WriteLine("Length of line 2: " + line2.Length());
+
+                if (line1.Length() > line2.Length())
+                    Console.WriteLine("Line 1 is longer than line 2.");
+                else if (line1.Length() < line2.Length())
+                    Console.WriteLine("Line 2 is longer than line 1.");
+                else
+                    Console.WriteLine("Line 1 and line 2 are equal in length.");
+                Console.ReadLine();
+            }
+           
+        }
+
+       
     }
 }
